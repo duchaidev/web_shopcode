@@ -1,0 +1,44 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  buildandpush:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Docker image
+        run: docker build -t frontendshop:latest .
+
+      - name: Push Docker image to registry
+        run: |
+          docker login -u duchaidev -p "le duc hai"
+          docker tag frontendshop duchaidev/frontendshop
+          docker push duchaidev/frontendshop
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: 103.167.88.144
+          username: root
+          password: Vpssieure@vnvn
+          script: |
+            docker pull duchaidev/frontendshop
+            docker stop frontendshop || true
+            docker rm frontendshop || true
+            docker image prune -f
+            docker run -d --name frontendshop -p 5172:5172 duchaidev/frontendshop

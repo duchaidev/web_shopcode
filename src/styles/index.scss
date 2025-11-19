@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+}
+.ant-btn-primary {
+  background-color: #12b799;
+}
+.tooltip-open {
+  .ant-tooltip-inner {
+    background-color: #12b799 !important;
+  }
+  .ant-tooltip-arrow::before {
+    background-color: #12b799 !important;
+  }
+}
+.label-custom {
+  label {
+    opacity: 0;
+  }
+}
+.label-highlight {
+  label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+.ant-progress-text {
+  color: #12b799 !important;
+}
+.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-no-default-orientation-margin-left::after {
+  background-color: #8c8c8c;
+}
+.ant-card-body {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a:hover {
+  color: #12b799;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e7e7e7; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #006e5a; /* color of the scroll thumb */
+  // border-radius: 20px;       /* roundness of the scroll thumb */
+  //border: 3px solid orange;  /* creates padding around scroll thumb */
+}
+
+.ck-editor__main {
+  .ck-content {
+    min-height: 120px;
+  }
+}
+
+.ant-switch {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.buttonSendFooter {
+  .ant-btn-primary {
+    background-color: #c9986d;
+    border-color: #c9986d;
+    &:hover {
+      background-color: #9e7856 !important;
+      border-color: #9e7856 !important;
+    }
+    transition: all 0.3s;
+  }
+}

@@ -1,0 +1,22 @@
+.ant-tabs-tab{
+    width: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-tabs-nav-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-table-thead{
+    .ant-table-cell{
+        background-color: #f0f0f0 !important;
+    }
+    .ant-table-cell::before{
+        border-right: 1px solid #dbdbdb !important;
+    }
+}

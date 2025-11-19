@@ -1,0 +1,49 @@
+.dropdownShowMenuProfile {
+    animation: dropdownShowMenuProfile 0.3s ease 0s 1 forwards;
+    max-height: 500px; /* Chiều cao tối đa của phần tử khi được hiển thị */
+    overflow-y: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá kích thước */
+  }
+  
+  @keyframes dropdownShowMenuProfile {
+    0% {
+      max-height: 0;
+      opacity: 0;
+    }
+    100% {
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+  
+  .dropdownHiddenMenuProfile {
+    animation: dropdownHiddenMenuProfile 0.2s ease 0s 1 forwards;
+  }
+  
+  @keyframes dropdownHiddenMenuProfile {
+    0% {
+      max-height: 500px;
+      opacity: 1;
+    }
+    100% {
+      max-height: 0;
+      opacity: 0;
+    }
+  }
+
+  .itemMenuProfile.active{
+    color: #00C09E;
+    p{
+      background-color: #00C09E;
+      border: #00C09E;
+    }
+    svg{
+      path{
+        fill: #00C09E;
+      }
+    }
+}
+
+.bgMenuProfile{
+  background-color: #fbfbfb;
+  border: 1px solid #ebebeb;
+}
